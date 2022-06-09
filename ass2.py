@@ -22,6 +22,11 @@ df['height'] = df['height'].fillna(length_med)
 df['height'] = zscore(df['height'])
 
 # replace cat2 column with dummy variables
-df = pd.get_dummies(df)
+dummies_cat2 = pd.get_dummies(df['cat2'], prefix="cat2")
+df = pd.concat([df,dummies_cat2], axis=1)
+
+# replace items column with dummy variables
+dummies_item = pd.get_dummies(df['item'], prefix="item")
+df = pd.concat([df,dummies_item], axis=1)
 
 print(df)
