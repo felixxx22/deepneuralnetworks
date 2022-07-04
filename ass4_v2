@@ -1,0 +1,16 @@
+from scipy.stats import zscore
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation
+from tensorflow.keras.callbacks import EarlyStopping
+
+def fill_missing_numeric(df,current,target):
+    # Fill in as needed
+    
+    return None
+
+df_submit = fill_missing_numeric(df,'a2','a16')
+df_submit = fill_missing_numeric(df_submit,'a14','a16')
+# Submit
+
+submit(source_file=file,data=[df_submit],key=key,no=4)
